@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service
 
 @Service
 class PetService(
-    private val petRepository: PetRepository,
+    private val petRepository: PetRepository
 ) {
     suspend fun savePet(pet: Pet): Pet {
         return petRepository.save(pet)

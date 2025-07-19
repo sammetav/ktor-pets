@@ -1,8 +1,5 @@
 package kt.ktor
 
-import io.mockk.every
-import io.mockk.mockk
-import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.test.runTest
@@ -34,7 +31,7 @@ class PetServiceTest {
             Pet(null, TrackerType.SMALL, PetType.CAT, 1, inZone = false, lostTracker = true),
             Pet(null, TrackerType.SMALL, PetType.CAT, 1, inZone = true, lostTracker = true),
             Pet(null, TrackerType.MEDIUM, PetType.DOG, 1, inZone = false),
-            Pet(null, TrackerType.SMALL, PetType.CAT, 1, inZone = true, lostTracker = true),
+            Pet(null, TrackerType.SMALL, PetType.CAT, 1, inZone = true, lostTracker = true)
         )
         pets.forEach { petRepository.save(it) }
     }

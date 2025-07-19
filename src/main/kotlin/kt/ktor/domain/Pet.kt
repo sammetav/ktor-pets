@@ -2,7 +2,6 @@ package kt.ktor.domain
 
 import org.springframework.data.relational.core.mapping.Table
 
-
 enum class TrackerType { SMALL, MEDIUM, BIG }
 enum class PetType { CAT, DOG }
 
@@ -18,7 +17,7 @@ data class Pet(
 
     val inZone: Boolean,
 
-    val lostTracker: Boolean? = false, //only for cats
+    val lostTracker: Boolean? = false // only for cats
 ) {
     init {
         if (petType == PetType.DOG) {

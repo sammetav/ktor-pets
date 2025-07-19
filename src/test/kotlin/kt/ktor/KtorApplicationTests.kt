@@ -9,5 +9,4 @@ class KtorApplicationTests {
     @Test
     fun contextLoads() {
     }
-
 }
