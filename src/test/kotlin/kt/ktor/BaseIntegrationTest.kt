@@ -63,7 +63,7 @@ abstract class BaseIntegrationTest {
                 .locations(
                     Location("classpath:db/migration"),
                     // data migrations can be excluded during development of integration tests, which don't need these migrations
-                    Location("classpath:db/tsetdata"),
+                    Location("classpath:db/tsetdata")
                 )
                 .dataSource(db.jdbcUrl, DB_USER, DB_PWD)
             logger.info("Executing flyway migrations")
