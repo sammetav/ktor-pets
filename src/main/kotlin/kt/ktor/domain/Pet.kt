@@ -6,7 +6,7 @@ import org.springframework.data.relational.core.mapping.Table
 enum class TrackerType { SMALL, MEDIUM, BIG }
 enum class PetType { CAT, DOG }
 
-@Table(name = "pet")
+@Table(name = "pets")
 data class Pet(
     val id: Long,
 
@@ -18,5 +18,11 @@ data class Pet(
 
     val inZone: Boolean,
 
-    val lostTracker: Boolean, //only for cats
-)
+    val lostTracker: Boolean? = false, //only for cats
+) {
+    init {
+        if (petType == PetType.DOG) {
+            require(lostTracker == null) { "Dogs cannot have lostTracker" }
+        }
+    }
+}
