@@ -18,6 +18,7 @@ abstract class BaseIntegrationTest {
 
     companion object {
         private val logger = LoggerFactory.getLogger(BaseIntegrationTest::class.java)
+
         private const val VERSION = "postgres:14.6"
         private const val DB_NAME = "data"
         private const val DB_USER = "postgres"
@@ -35,6 +36,7 @@ abstract class BaseIntegrationTest {
             registry.add("spring.r2dbc.url", Companion::r2dbcUrl)
             registry.add("spring.r2dbc.username", db::getUsername)
             registry.add("spring.r2dbc.password", db::getPassword)
+            registry.add("spring.flyway.enabled") { "false" }
             registry.add("postgres.host", db::getHost)
             registry.add("postgres.port") { db.getMappedPort(PostgreSQLContainer.POSTGRESQL_PORT) }
             registry.add("postgres.database", db::getDatabaseName)
