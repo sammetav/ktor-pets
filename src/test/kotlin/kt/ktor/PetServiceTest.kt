@@ -47,7 +47,8 @@ class PetServiceTest : BaseIntegrationTest() {
     @Test
     fun `get pets outside of zone grouped`() = runTest {
         Assertions.assertEquals(
-            petService.getPetsOutsideOfZoneAndGrouped().filter { it.key == PetType.DOG }.values.size, 1
+            petService.getPetsOutsideOfZoneAndGrouped().filter { it.key == PetType.DOG }.values.size,
+            1
         )
     }
 }
