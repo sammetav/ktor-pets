@@ -49,6 +49,15 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.8.0-RC")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
+
+    //log4j
+    implementation("org.apache.logging.log4j:log4j:3.0.0-alpha1")
+
+    //test
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.13.3")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("io.mockk:mockk:1.14.4")
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.10.2'
 }
 
 kotlin {

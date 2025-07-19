@@ -22,7 +22,7 @@ data class Pet(
 ) {
     init {
         if (petType == PetType.DOG) {
-            require(lostTracker == null) { "Dogs cannot have lostTracker" }
+            require(lostTracker == false) { "Dogs cannot have lostTracker" }
         }
 
         if (petType == PetType.CAT) {
