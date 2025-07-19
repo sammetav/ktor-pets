@@ -12,10 +12,8 @@ import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.test.context.SpringBootTest
 
-@SpringBootTest
-class PetServiceTest {
+class PetServiceTest : BaseIntegrationTest() {
 
     @Autowired
     lateinit var petService: PetService
@@ -48,6 +46,8 @@ class PetServiceTest {
 
     @Test
     fun `get pets outside of zone grouped`() = runTest {
-        Assertions.assertEquals(petService.getPetsOutsideOfZoneAndGrouped().filter { it.key == PetType.DOG }.values.size, 1)
+        Assertions.assertEquals(
+            petService.getPetsOutsideOfZoneAndGrouped().filter { it.key == PetType.DOG }.values.size, 1
+        )
     }
 }
