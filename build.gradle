@@ -62,11 +62,6 @@ dependencies {
     testImplementation("org.testcontainers:r2dbc:1.21.2")
 }
 
-test {
-    useJUnitPlatform()
-    maxParallelForks = 1
-}
-
 kotlin {
     compilerOptions {
         freeCompilerArgs.addAll '-Xjsr305=strict'
