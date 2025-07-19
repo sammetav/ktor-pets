@@ -29,6 +29,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-r2dbc:3.2.1")
     implementation("io.r2dbc:r2dbc-spi:1.0.0.RELEASE")
     implementation("io.r2dbc:r2dbc-pool:1.0.1.RELEASE")
+    implementation 'io.r2dbc:r2dbc-pool'
     implementation("org.postgresql:r2dbc-postgresql:1.0.3.RELEASE")
     runtimeOnly 'org.postgresql:postgresql'
 
@@ -57,9 +58,9 @@ dependencies {
     testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.10.2'
 
     //test-containers
-    testImplementation("org.testcontainers:junit-jupiter:1.19.0")
-    testImplementation 'org.testcontainers:r2dbc'
-    testImplementation("org.testcontainers:postgresql:1.19.0")
+    testImplementation("org.testcontainers:junit-jupiter:1.21.2")
+    testImplementation("org.testcontainers:postgresql:1.21.2")
+    testImplementation("org.testcontainers:r2dbc:1.21.2")
 }
 
 test {
