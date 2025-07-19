@@ -1,8 +1,5 @@
 package kt.ktor
 
-import org.flywaydb.core.Flyway
-import org.flywaydb.core.api.Location
-import org.flywaydb.core.api.configuration.FluentConfiguration
 import org.slf4j.LoggerFactory
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.test.context.ActiveProfiles
@@ -18,8 +15,6 @@ import org.testcontainers.utility.DockerImageName
 abstract class BaseIntegrationTest {
 
     companion object {
-        @JvmStatic
-        protected var flywayBuilder: FluentConfiguration
 
         private val logger = LoggerFactory.getLogger(BaseIntegrationTest::class.java)
 
@@ -49,25 +44,5 @@ abstract class BaseIntegrationTest {
 
         private fun r2dbcUrl(): String =
             "r2dbc:postgresql://${db.host}:${db.getMappedPort(PostgreSQLContainer.POSTGRESQL_PORT)}/${db.databaseName}"
-
-        fun runMigrations(schema: String? = null) {
-            schema?.apply { flywayBuilder.schemas(schema) }
-            flywayBuilder.load().migrate()
-        }
-
-        init {
-            logger.info("Starting postgres test container")
-            db.start()
-            flywayBuilder = Flyway
-                .configure()
-                .locations(
-                    Location("classpath:db/migration"),
-                    // data migrations can be excluded during development of integration tests, which don't need these migrations
-                    Location("classpath:db/tsetdata")
-                )
-                .dataSource(db.jdbcUrl, DB_USER, DB_PWD)
-            logger.info("Executing flyway migrations")
-            runMigrations()
-        }
     }
 }
