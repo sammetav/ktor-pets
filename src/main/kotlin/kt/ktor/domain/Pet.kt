@@ -8,7 +8,7 @@ enum class PetType { CAT, DOG }
 
 @Table(name = "pets")
 data class Pet(
-    val id: Long,
+    val id: Long? = null,
 
     val trackerType: TrackerType,
 
