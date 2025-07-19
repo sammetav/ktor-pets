@@ -1,8 +1,5 @@
 # Ktor, Coroutines, and Reactive Programming (WIP) in This Project
 
-## Ktor Basics
-Ktor is a Kotlin framework for building asynchronous servers and clients. However, this project uses Spring Boot with Kotlin, not Ktor itself—the package name is just `kt.ktor`. The principles of asynchronous and reactive programming still apply.
-
 ## Coroutines and `suspend` Functions
 Kotlin coroutines allow you to write asynchronous, non-blocking code in a sequential style. Functions marked with `suspend` can be paused and resumed without blocking a thread, making them ideal for I/O operations (like database or network calls).
 
