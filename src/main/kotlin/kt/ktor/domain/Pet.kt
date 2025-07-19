@@ -24,5 +24,14 @@ data class Pet(
         if (petType == PetType.DOG) {
             require(lostTracker == null) { "Dogs cannot have lostTracker" }
         }
+
+        if (petType == PetType.CAT) {
+            require(
+                trackerType in setOf(
+                    TrackerType.SMALL,
+                    TrackerType.BIG
+                )
+            ) { "Cat trackers can only be in Small and big" }
+        }
     }
 }
