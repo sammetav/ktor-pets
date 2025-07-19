@@ -2,7 +2,6 @@ package kt.ktor
 
 import org.flywaydb.core.Flyway
 import org.flywaydb.core.api.Location
-import org.flywaydb.core.api.configuration.FluentConfiguration
 import org.slf4j.LoggerFactory
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.test.context.ActiveProfiles
