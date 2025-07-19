@@ -5,4 +5,4 @@ create table Pets(
     owner_id INTEGER not null,
     in_zone BOOLEAN not null,
     lost_tracker BOOLEAN
-)
+);
